@@ -14,8 +14,7 @@ import{
     Text
 }from 'native-base';
 
-import logo from '../image/users-solid.svg';
-import bgImage from '..image/babi.jpg';
+import logo from '../image/users-solid.png';
 
 class LoginForm extends Component{
     constructor(props)
@@ -25,11 +24,10 @@ class LoginForm extends Component{
 
     render() {
         return (
-            <view style={StyleSheet.containerStyle}>
-                <Image style={StyleSheet.bgImageStyle} source={bgImage}/>
+            <View style={StyleSheet.containerStyle}>
                 <View style={styles.logoStyle}>
                     <Thumbnail square large source={logo}/>
-                    <Text style={styles.textLogoStyle}>Login</Text>
+                    <Text style={styles.textLogoStyle}>LOGIN</Text>
                 </View>
                 <Form style={styles.formLoginStyle}>
                     <Item floatingLabel>
@@ -45,10 +43,10 @@ class LoginForm extends Component{
                         <Input style={styles.inputStyle} secureTextEntry={true}/>
                     </Item>
                 </Form>
-                <Button block info style={styles.footerBottomStyle}>
+                <Button onPress={()=>this.props.navigation.navigate('MasukForm')} block info style={styles.footerBottomStyle}>
                     <Text>Masuk</Text>
                 </Button>
-            </view>
+            </View>
         )
     }
 }
@@ -57,15 +55,6 @@ const styles = StyleSheet.create({
     containerStyle: {
         flex: 1
     },
-    bgImageStyle: {
-        flex:1,
-        resizeMode: 'cover',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'absolute',
-        width: '100%',
-        height: '100%'
-    },
     logoStyle:{
         marginTop: 70,
         marginBottom: 80,
@@ -73,8 +62,9 @@ const styles = StyleSheet.create({
         justifyContent:'center'
     },
     textLogoStyle:{
-        fontSize:15,
-        color: 'white'
+        textAlign:'center',
+        fontSize:30,
+        color: 'black'
     },
     formLoginStyle: {
         marginTop:-30,
@@ -82,7 +72,7 @@ const styles = StyleSheet.create({
         paddingRight:30
     },
     inputStyle:{
-        color:'white',
+        color:'black',
         marginBottom:6,
         fontSize:14
     },
